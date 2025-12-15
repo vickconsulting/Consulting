@@ -5,230 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Vick Consulting | AHA Training • Safety • HR • Leadership</title>
-  <meta name="description" content="Vick Consulting delivers American Heart Association (AHA) compliant training and extends into safety, HR, and leadership consulting across the U.S. and internationally." />
+  <meta name="description" content="Vick Consulting delivers AHA-compliant training and extends into safety, HR, and leadership consulting across the U.S. and internationally." />
 
-  <!-- Google Font -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
     :root {
-      --primary: #157347;
-      --primary-soft: #1f8f57;
-      --accent-yellow: #f5b800;
-      --accent-red: #e5534b;
-      --text: #1a1a1a;
-      --muted: #5f6b7a;
-      --border: #e2e8f0;
-      --bg: #ffffff;
-      --bg-alt: #f7fafc;
-      --radius: 18px;
-      --shadow: 0 10px 25px rgba(0,0,0,0.08);
-      --max-width: 1120px;
+      --primary:#157347;
+      --primary-soft:#1f8f57;
+      --accent-yellow:#f5b800;
+      --accent-red:#e5534b;
+      --text:#1a1a1a;
+      --muted:#5f6b7a;
+      --border:#e2e8f0;
+      --bg:#ffffff;
+      --bg-alt:#f7fafc;
+      --radius:18px;
+      --shadow:0 10px 25px rgba(0,0,0,0.08);
+      --max-width:1120px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg-alt);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Poppins,sans-serif; background:var(--bg-alt); color:var(--text); line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
 
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      height: 70px;
-      z-index: 100;
+      position:fixed; top:0; left:0; right:0;
+      height:70px; background:#fff;
+      border-bottom:1px solid var(--border);
+      z-index:100;
     }
 
     .nav-inner {
-      max-width: var(--max-width);
-      margin: auto;
-      height: 100%;
-      padding: 0 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width:var(--max-width);
+      margin:auto;
+      height:100%;
+      padding:0 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
+    .brand { display:flex; align-items:center; gap:.75rem; }
     .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
+      width:42px; height:42px;
+      border-radius:50%;
+      border:2px solid var(--primary);
+      display:flex; align-items:center; justify-content:center;
+      background:#fff;
     }
-
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .brand-text-main {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
+    .brand-logo img { width:100%; height:100%; object-fit:contain; }
+    .brand-text-main { font-weight:600; }
     .brand-text-sub {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
+      font-size:.7rem; text-transform:uppercase;
+      letter-spacing:.14em; color:var(--muted);
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      font-size: 0.85rem;
-    }
-
-    nav a {
-      color: var(--muted);
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    .language-toggle {
-      display: flex;
-      gap: 0.4rem;
-    }
+    nav { display:flex; align-items:center; gap:1rem; font-size:.85rem; }
+    nav a { color:var(--muted); }
+    nav a:hover { color:var(--primary); }
 
     .btn {
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      background: #fff;
+      padding:.45rem .9rem;
+      border-radius:999px;
+      font-size:.75rem;
+      border:1px solid var(--border);
+      background:#fff;
+      cursor:pointer;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
-      color: #fff;
-      border: none;
+      background:linear-gradient(135deg,var(--primary),var(--primary-soft));
+      color:#fff; border:none;
     }
 
-    main {
-      padding-top: 90px;
+    .language-toggle { display:flex; gap:.35rem; }
+    .lang-btn.active {
+      background:#e6f6ee;
+      border-color:var(--primary);
+      color:var(--primary);
     }
 
-    .page {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 2.5rem 1.25rem;
-    }
+    main { padding-top:90px; }
+    .page { max-width:var(--max-width); margin:auto; padding:2.5rem 1.25rem; }
 
+    .section { margin-top:4rem; }
+    h2 { font-size:1.9rem; font-weight:600; }
+    .center { text-align:center; max-width:640px; margin:.5rem auto 2rem; color:var(--muted); }
+
+    /* HERO */
     .hero {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 2.5rem;
-      align-items: center;
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:2.5rem;
+      align-items:center;
     }
 
     .hero-title {
-      font-size: 2.4rem;
-      font-weight: 600;
-      line-height: 1.15;
+      font-size:2.4rem; font-weight:600; line-height:1.15;
     }
 
     .hero-title span {
-      background: linear-gradient(120deg, var(--primary), var(--accent-yellow));
-      -webkit-background-clip: text;
-      color: transparent;
+      background:linear-gradient(120deg,var(--primary),var(--accent-yellow));
+      -webkit-background-clip:text; color:transparent;
     }
 
-    .hero-subtitle {
-      margin-top: 1rem;
-      color: var(--muted);
-      max-width: 36rem;
-    }
+    .hero-subtitle { margin-top:1rem; color:var(--muted); }
 
     .hero-meta {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1.2rem;
-      font-size: 0.82rem;
-      color: var(--muted);
+      display:flex; gap:1.5rem;
+      margin-top:1.2rem; font-size:.82rem; color:var(--muted);
     }
 
-    .hero-meta strong {
-      display: block;
-      color: var(--text);
-    }
+    .hero-meta strong { display:block; color:var(--text); }
 
     .hero-panel {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      font-size: 0.82rem;
+      background:#fff;
+      padding:1.5rem;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      font-size:.82rem;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 1.2rem;
-      margin-top: 2.5rem;
+    /* GRIDS */
+    .grid3 {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
     }
 
-    .stat {
-      background: #fff;
-      padding: 1rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      text-align: center;
+    .panel {
+      background:#fff;
+      padding:1.4rem;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      font-size:.86rem;
     }
 
-    .stat span {
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 1.05rem;
+    .panel h3 { margin:.6rem 0 .3rem; font-size:1rem; }
+    .panel p { color:var(--muted); }
+    .panel ul { padding-left:1.1rem; margin-top:.4rem; }
+
+    .icon {
+      width:38px; height:38px;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      background:#e6f6ee; color:var(--primary);
     }
+
+    .quote p { font-style:italic; }
+    .who { margin-top:.6rem; font-size:.8rem; font-weight:500; }
+    .who small { display:block; color:var(--muted); }
 
     footer {
-      border-top: 1px solid var(--border);
-      background: #fff;
-      padding: 1.6rem 1.25rem;
-      margin-top: 4rem;
-      font-size: 0.78rem;
-      color: var(--muted);
+      margin-top:4rem;
+      padding:1.6rem 1.25rem;
+      border-top:1px solid var(--border);
+      background:#fff;
+      font-size:.78rem;
+      color:var(--muted);
     }
 
     .footer-inner {
-      max-width: var(--max-width);
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      max-width:var(--max-width);
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:1rem;
     }
 
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: repeat(2,1fr); }
+    @media(max-width:900px){
+      .hero,.grid3 { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -239,7 +191,6 @@
   <div class="nav-inner">
     <div class="brand">
       <div class="brand-logo">
-        <!-- LOGO PLACEHOLDER -->
         <img src="assets/logo.png" alt="Vick Consulting Logo">
       </div>
       <div>
@@ -249,32 +200,40 @@
     </div>
 
     <nav>
-      <a href="#">AHA Courses</a>
-      <a href="#">Employers</a>
-      <a href="#">FAQ</a>
-      <a href="#">Contact</a>
+      <a href="#staffing" data-en="Staffing" data-fr="Recrutement">Staffing</a>
+      <a href="#testimonials" data-en="Testimonials" data-fr="Témoignages">Testimonials</a>
+      <a href="#why" data-en="Why Us" data-fr="Pourquoi nous">Why Us</a>
 
       <div class="language-toggle">
-        <button class="btn" onclick="setLanguage('en')">EN</button>
-        <button class="btn" onclick="setLanguage('fr')">FR</button>
+        <button class="btn lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="btn lang-btn" onclick="setLang('fr')">FR</button>
       </div>
 
-      <button class="btn btn-primary">Book Class</button>
+      <button class="btn btn-primary"
+        data-en="Book AHA Class"
+        data-fr="Réserver une formation AHA">
+        Book AHA Class
+      </button>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="page">
+
+    <!-- HERO -->
     <section class="hero">
       <div>
-        <h1 class="hero-title">
-          Lead with <span>AHA certification</span>,<br>
-          then build safer organizations.
+        <h1 class="hero-title"
+          data-en="Lead with AHA certification, then build safer organizations."
+          data-fr="Dirigez avec la certification AHA et bâtissez des organisations plus sûres.">
+          Lead with <span>AHA certification</span>, then build safer organizations.
         </h1>
 
-        <p class="hero-subtitle">
-          Vick Consulting provides American Heart Association–compliant CPR, BLS, and First Aid training as the gateway to comprehensive safety, HR, and leadership consulting.
+        <p class="hero-subtitle"
+          data-en="We deliver American Heart Association training across the U.S. and internationally."
+          data-fr="Nous offrons des formations de l’American Heart Association aux États-Unis et à l’international.">
+          We deliver American Heart Association training across the U.S. and internationally.
         </p>
 
         <div class="hero-meta">
@@ -290,55 +249,103 @@
       </div>
 
       <div class="hero-panel">
-        <strong>Training delivery</strong><br><br>
-        ✔ On-site & group classes<br>
-        ✔ U.S.-based, international delivery<br>
-        ✔ Safety, HR & leadership extensions<br>
-        ✔ Custom programs for employers
+        ✔ On-site & remote delivery<br>
+        ✔ U.S.-based, international reach<br>
+        ✔ Safety, HR & leadership extensions
       </div>
     </section>
 
-    <section class="stats">
-      <div class="stat">
-        <span>10+ Years</span><br>
-        Experience
-      </div>
-      <div class="stat">
-        <span>Multi-Credentialed</span><br>
-        PhD • MBA • PMP
-      </div>
-      <div class="stat">
-        <span>AHA-First Model</span><br>
-        Training → Partnership
-      </div>
-      <div class="stat">
-        <span>US + Global</span><br>
-        Remote & on-site
+    <!-- STAFFING -->
+    <section class="section" id="staffing">
+      <h2 data-en="Staffing & Talent Support" data-fr="Recrutement et talents">
+        Staffing & Talent Support
+      </h2>
+      <p class="center"
+        data-en="Professionals aligned to your risk, culture, and operations."
+        data-fr="Des professionnels alignés sur vos risques, votre culture et vos opérations.">
+        Professionals aligned to your risk, culture, and operations.
+      </p>
+
+      <div class="grid3">
+        <div class="panel">
+          <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Safety & EHS Talent</h3>
+          <p>Construction, manufacturing, facilities, and projects.</p>
+        </div>
+
+        <div class="panel">
+          <div class="icon"><i class="fa-solid fa-id-card-clip"></i></div>
+          <h3>HR & People Operations</h3>
+          <p>Compliance-minded workforce support.</p>
+        </div>
+
+        <div class="panel">
+          <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3>Operations & Projects</h3>
+          <p>Structured coordination and execution.</p>
+        </div>
       </div>
     </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials">
+      <h2 data-en="Testimonials" data-fr="Témoignages">Testimonials</h2>
+      <p class="center"
+        data-en="What clients and partners say."
+        data-fr="Ce que disent nos clients et partenaires.">
+        What clients and partners say.
+      </p>
+
+      <div class="grid3">
+        <div class="panel quote">
+          <p>"The training felt real and practical."</p>
+          <div class="who">Operations Manager</div>
+        </div>
+        <div class="panel quote">
+          <p>"Safety and HR alignment improved immediately."</p>
+          <div class="who">HR Leader</div>
+        </div>
+        <div class="panel quote">
+          <p>"Professional, responsive, and knowledgeable."</p>
+          <div class="who">Project Executive</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section" id="why">
+      <h2 data-en="Why Work With Vick Consulting" data-fr="Pourquoi travailler avec Vick Consulting">
+        Why Work With Vick Consulting
+      </h2>
+      <p class="center"
+        data-en="Because safety, people, and leadership must work together."
+        data-fr="Parce que la sécurité, les personnes et le leadership doivent fonctionner ensemble.">
+        Because safety, people, and leadership must work together.
+      </p>
+    </section>
+
   </div>
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div>
-      © <span id="year"></span> Vick Consulting • Principal Consultant: PhD, MBA, PMP
-    </div>
-    <div>
-      English • Français (coming next)
-    </div>
+    <div>© <span id="year"></span> Vick Consulting • PhD, MBA, PMP</div>
+    <div>English • Français</div>
   </div>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  function setLanguage(lang) {
-    alert(
-      lang === "fr"
-        ? "Version française bientôt disponible."
-        : "English version active."
-    );
+  function setLang(lang) {
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add("active");
+
+    document.documentElement.lang = lang;
   }
 </script>
 
