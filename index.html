@@ -1,354 +1,1078 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vick Consulting | AHA Training • Safety • HR • Leadership • Staffing</title>
+  <meta name="description" content="Vick Consulting delivers on-demand AHA CPR/BLS/First Aid training, EHS & HR compliance, leadership development, and staffing solutions.">
 
-  <title>Vick Consulting | AHA Training • Safety • HR • Leadership</title>
-  <meta name="description" content="Vick Consulting delivers AHA-compliant training and extends into safety, HR, and leadership consulting across the U.S. and internationally." />
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
   <style>
     :root {
-      --primary:#157347;
-      --primary-soft:#1f8f57;
-      --accent-yellow:#f5b800;
-      --accent-red:#e5534b;
-      --text:#1a1a1a;
-      --muted:#5f6b7a;
-      --border:#e2e8f0;
-      --bg:#ffffff;
-      --bg-alt:#f7fafc;
-      --radius:18px;
-      --shadow:0 10px 25px rgba(0,0,0,0.08);
-      --max-width:1120px;
+      --white: #ffffff;
+      --bg: #f8fafc;
+      --ink: #0f172a;
+      --muted: #475569;
+      --muted2: #64748b;
+      --line: #e2e8f0;
+      --brand: #0f8a44;
+      --brand2: #3db56d;
+      --accent: #e1b800;
+      --radius: 22px;
+      --shadow: 0 18px 40px rgba(2, 6, 23, 0.10);
+      --shadow2: 0 10px 26px rgba(2, 6, 23, 0.08);
+      --max: 1200px;
     }
 
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:Poppins,sans-serif; background:var(--bg-alt); color:var(--text); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
 
+    /* Header */
     header {
-      position:fixed; top:0; left:0; right:0;
-      height:70px; background:#fff;
-      border-bottom:1px solid var(--border);
-      z-index:100;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .navwrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      min-width: 250px;
+    }
+    .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2), var(--accent));
+      box-shadow: var(--shadow2);
+      position: relative;
+      overflow: hidden;
+    }
+    .mark:after {
+      content: "";
+      position: absolute;
+      inset: -40% -40% auto auto;
+      width: 120px;
+      height: 120px;
+      background: rgba(255,255,255,.28);
+      transform: rotate(35deg);
+    }
+    .brandtext strong { font-size: 1.05rem; letter-spacing: .2px; }
+    .brandtext small { display: block; color: var(--muted2); font-weight: 500; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: .9rem;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: .92rem;
+      color: var(--muted);
+      position: relative;
+      padding: .25rem .15rem;
+    }
+    nav a:hover { color: var(--brand); }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: var(--brand);
+      transition: width .2s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    .navcta {
+      display: inline-flex;
+      gap: .6rem;
+      align-items: center;
+      padding: .75rem 1.05rem;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: var(--shadow2);
+      font-size: .9rem;
+      border: none;
     }
 
-    .nav-inner {
-      max-width:var(--max-width);
-      margin:auto;
-      height:100%;
-      padding:0 1.25rem;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    /* Sections */
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4.2rem 1.25rem;
+    }
+    .section h2 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: .6rem;
+      letter-spacing: -0.02em;
+    }
+    .center {
+      text-align: center;
+      color: var(--muted);
+      max-width: 820px;
+      margin: 0 auto 2.4rem;
+      font-size: 1.05rem;
     }
 
-    .brand { display:flex; align-items:center; gap:.75rem; }
-    .brand-logo {
-      width:42px; height:42px;
-      border-radius:50%;
-      border:2px solid var(--primary);
-      display:flex; align-items:center; justify-content:center;
-      background:#fff;
-    }
-    .brand-logo img { width:100%; height:100%; object-fit:contain; }
-    .brand-text-main { font-weight:600; }
-    .brand-text-sub {
-      font-size:.7rem; text-transform:uppercase;
-      letter-spacing:.14em; color:var(--muted);
-    }
-
-    nav { display:flex; align-items:center; gap:1rem; font-size:.85rem; }
-    nav a { color:var(--muted); }
-    nav a:hover { color:var(--primary); }
-
-    .btn {
-      padding:.45rem .9rem;
-      border-radius:999px;
-      font-size:.75rem;
-      border:1px solid var(--border);
-      background:#fff;
-      cursor:pointer;
-    }
-
-    .btn-primary {
-      background:linear-gradient(135deg,var(--primary),var(--primary-soft));
-      color:#fff; border:none;
-    }
-
-    .language-toggle { display:flex; gap:.35rem; }
-    .lang-btn.active {
-      background:#e6f6ee;
-      border-color:var(--primary);
-      color:var(--primary);
-    }
-
-    main { padding-top:90px; }
-    .page { max-width:var(--max-width); margin:auto; padding:2.5rem 1.25rem; }
-
-    .section { margin-top:4rem; }
-    h2 { font-size:1.9rem; font-weight:600; }
-    .center { text-align:center; max-width:640px; margin:.5rem auto 2rem; color:var(--muted); }
-
-    /* HERO */
+    /* Hero */
     .hero {
-      display:grid;
-      grid-template-columns:1.4fr 1fr;
-      gap:2.5rem;
-      align-items:center;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3.8rem 1.25rem 2.4rem;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .kicker {
+      display: inline-flex;
+      gap: .6rem;
+      align-items: center;
+      padding: .42rem .75rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .85rem;
+      width: fit-content;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 18px rgba(2,6,23,.05);
+    }
+    .hero h1 {
+      font-size: 3.1rem;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--brand); }
+    .sub {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 1.35rem;
+      max-width: 92%;
     }
 
-    .hero-title {
-      font-size:2.4rem; font-weight:600; line-height:1.15;
+    .pillrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-bottom: 1.2rem;
+    }
+    .pill {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .82rem;
+      padding: .35rem .7rem;
+      border-radius: 999px;
     }
 
-    .hero-title span {
-      background:linear-gradient(120deg,var(--primary),var(--accent-yellow));
-      -webkit-background-clip:text; color:transparent;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      align-items: center;
+      margin-top: 1.1rem;
+    }
+    .btn {
+      display: inline-flex;
+      gap: .55rem;
+      align-items: center;
+      border-radius: 999px;
+      padding: .95rem 1.25rem;
+      font-weight: 800;
+      font-size: .95rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn.secondary {
+      background: #fff;
+      color: var(--brand);
+      border: 2px solid var(--brand);
     }
 
-    .hero-subtitle { margin-top:1rem; color:var(--muted); }
+    /* Hero visual (no external images) */
+    .heroVisual {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      overflow: hidden;
+      position: relative;
+      min-height: 420px;
+    }
+    .heroVisual .bgGlow {
+      position: absolute;
+      inset: -40% -30% auto auto;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle at 30% 30%, rgba(15,138,68,.22), rgba(61,181,109,.10), rgba(225,184,0,.08), rgba(255,255,255,0));
+      transform: rotate(12deg);
+      pointer-events: none;
+    }
+    .heroVisual .card {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.05rem 1.05rem;
+      box-shadow: 0 10px 22px rgba(2,6,23,.06);
+      margin-bottom: .9rem;
+    }
+    .miniTitle { font-weight: 800; }
+    .miniText { color: var(--muted); font-size: .95rem; margin-top: .25rem; }
 
-    .hero-meta {
-      display:flex; gap:1.5rem;
-      margin-top:1.2rem; font-size:.82rem; color:var(--muted);
+    .badgeRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .8rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-weight: 700;
+      font-size: .82rem;
+      color: var(--muted);
+      padding: .35rem .65rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
     }
 
-    .hero-meta strong { display:block; color:var(--text); }
-
-    .hero-panel {
-      background:#fff;
-      padding:1.5rem;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      font-size:.82rem;
+    /* Stats strip */
+    .stats {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem 1rem;
+    }
+    .statsGrid {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.1rem;
+      padding: 1.35rem 1.35rem;
+    }
+    .stat {
+      padding: .2rem .3rem;
+    }
+    .stat strong {
+      display: block;
+      color: var(--brand);
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: -.01em;
+    }
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: .25rem;
     }
 
-    /* GRIDS */
+    /* Cards */
     .grid3 {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
     }
 
     .panel {
-      background:#fff;
-      padding:1.4rem;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      font-size:.86rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 1.4rem 1.4rem;
+      position: relative;
+      overflow: hidden;
     }
-
-    .panel h3 { margin:.6rem 0 .3rem; font-size:1rem; }
-    .panel p { color:var(--muted); }
-    .panel ul { padding-left:1.1rem; margin-top:.4rem; }
+    .panel:hover { box-shadow: var(--shadow); transform: translateY(-2px); transition: .18s ease; }
+    .panel h3 {
+      color: var(--ink);
+      font-size: 1.15rem;
+      margin-bottom: .5rem;
+      letter-spacing: -0.02em;
+    }
+    .panel p { color: var(--muted); }
+    .panel ul { margin-top: .75rem; padding-left: 1.15rem; color: var(--muted); }
+    .panel li { margin-bottom: .25rem; }
 
     .icon {
-      width:38px; height:38px;
-      border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      background:#e6f6ee; color:var(--primary);
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: rgba(15,138,68,.10);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand);
+      margin-bottom: .8rem;
+      border: 1px solid rgba(15,138,68,.18);
     }
 
-    .quote p { font-style:italic; }
-    .who { margin-top:.6rem; font-size:.8rem; font-weight:500; }
-    .who small { display:block; color:var(--muted); }
-
-    footer {
-      margin-top:4rem;
-      padding:1.6rem 1.25rem;
-      border-top:1px solid var(--border);
-      background:#fff;
-      font-size:.78rem;
-      color:var(--muted);
+    /* CTA banner */
+    .cta {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem 3.6rem;
+    }
+    .ctaInner {
+      border-radius: var(--radius);
+      background: linear-gradient(90deg, var(--brand), var(--brand2), var(--accent));
+      color: #fff;
+      box-shadow: var(--shadow);
+      padding: 2rem 2rem;
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .ctaInner h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: .35rem;
+    }
+    .ctaInner p { opacity: .95; }
+    .ctaInner a {
+      justify-self: end;
+      background: #fff;
+      color: var(--brand);
+      padding: .95rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 900;
+      text-align: center;
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      width: fit-content;
     }
 
-    .footer-inner {
-      max-width:var(--max-width);
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:1rem;
+    /* Testimonials */
+    .quote {
+      position: relative;
+      padding-top: 1.25rem;
+    }
+    .quote:before {
+      content: "\201C";
+      position: absolute;
+      top: -4px;
+      left: 12px;
+      font-size: 3.2rem;
+      color: rgba(15,138,68,.18);
+      font-weight: 900;
+      line-height: 1;
+    }
+    .who {
+      margin-top: .9rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .who small {
+      display: block;
+      color: var(--muted2);
+      font-weight: 600;
+      margin-top: .15rem;
     }
 
-    @media(max-width:900px){
-      .hero,.grid3 { grid-template-columns:1fr; }
+    /* Forms */
+    .formWrap {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+    form {
+      display: grid;
+      gap: .9rem;
+      margin-top: .2rem;
+    }
+    .field {
+      display: grid;
+      gap: .35rem;
+    }
+    label { font-weight: 700; color: var(--ink); font-size: .9rem; }
+    input, select, textarea {
+      width: 100%;
+      padding: .85rem .95rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      outline: none;
+      font-family: inherit;
+      font-size: .95rem;
+      background: #fff;
+      color: var(--ink);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .hint { color: var(--muted2); font-size: .85rem; }
+    .note {
+      border-left: 4px solid var(--brand);
+      background: rgba(15,138,68,.06);
+      padding: .9rem 1rem;
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .footer {
+      padding: 2.3rem 1.25rem;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      margin-top: 2.8rem;
+    }
+    .footgrid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .fine { color: var(--muted2); font-size: .85rem; margin-top: .8rem; }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .heroVisual { min-height: 360px; }
+      .statsGrid { grid-template-columns: repeat(2, 1fr); }
+      .grid3 { grid-template-columns: repeat(2, 1fr); }
+      .ctaInner { grid-template-columns: 1fr; }
+      .ctaInner a { justify-self: start; }
+      .formWrap { grid-template-columns: 1fr; }
+      .footgrid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .grid3 { grid-template-columns: 1fr; }
+      .grid2 { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.45rem; }
+      nav { gap: .6rem; }
+      .navcta { width: 100%; justify-content: center; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="brand-logo">
-        <img src="assets/logo.png" alt="Vick Consulting Logo">
-      </div>
-      <div>
-        <div class="brand-text-main">Vick Consulting</div>
-        <div class="brand-text-sub">AHA Training • Safety • HR • Leadership</div>
+  <div class="navwrap">
+    <div class="logo">
+      <div class="mark" aria-hidden="true"></div>
+      <div class="brandtext">
+        <strong>Vick Consulting</strong>
+        <small>AHA Training • Safety • HR • Leadership • Staffing</small>
       </div>
     </div>
 
-    <nav>
-      <a href="#staffing" data-en="Staffing" data-fr="Recrutement">Staffing</a>
-      <a href="#testimonials" data-en="Testimonials" data-fr="Témoignages">Testimonials</a>
-      <a href="#why" data-en="Why Us" data-fr="Pourquoi nous">Why Us</a>
-
-      <div class="language-toggle">
-        <button class="btn lang-btn active" onclick="setLang('en')">EN</button>
-        <button class="btn lang-btn" onclick="setLang('fr')">FR</button>
-      </div>
-
-      <button class="btn btn-primary"
-        data-en="Book AHA Class"
-        data-fr="Réserver une formation AHA">
-        Book AHA Class
-      </button>
+    <nav aria-label="Primary navigation">
+      <a href="#aha">AHA Training</a>
+      <a href="#services">Services</a>
+      <a href="#staffing">Staffing</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#why">Why Vick</a>
+      <a href="#contact">Contact</a>
+      <a class="navcta" href="#contact"><i class="fa-solid fa-calendar-check"></i> Request a Quote</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <div class="page">
+<section class="hero" id="top">
+  <div>
+    <div class="kicker"><i class="fa-solid fa-shield-heart"></i> On‑Demand Training • Compliance‑Ready • People‑First</div>
+    <h1>Training that saves lives — <span>systems that sustain performance.</span></h1>
+    <p class="sub">
+      Vick Consulting helps workplaces, healthcare teams, schools, churches, and community organizations build real readiness.
+      We start with on‑demand AHA CPR/BLS/First Aid training, then strengthen safety, HR compliance, leadership culture, and staffing pipelines.
+    </p>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1 class="hero-title"
-          data-en="Lead with AHA certification, then build safer organizations."
-          data-fr="Dirigez avec la certification AHA et bâtissez des organisations plus sûres.">
-          Lead with <span>AHA certification</span>, then build safer organizations.
-        </h1>
+    <div class="pillrow">
+      <span class="pill">AHA CPR • BLS • First Aid</span>
+      <span class="pill">OSHA • EPA • Emergency Planning</span>
+      <span class="pill">Leadership (EI • Transformational)</span>
+      <span class="pill">Staffing & Workforce Solutions</span>
+    </div>
 
-        <p class="hero-subtitle"
-          data-en="We deliver American Heart Association training across the U.S. and internationally."
-          data-fr="Nous offrons des formations de l’American Heart Association aux États-Unis et à l’international.">
-          We deliver American Heart Association training across the U.S. and internationally.
-        </p>
+    <div class="actions">
+      <a class="btn primary" href="#ondemand"><i class="fa-solid fa-bolt"></i> Free On‑Demand Class</a>
+      <a class="btn secondary" href="#aha"><i class="fa-solid fa-heart-pulse"></i> Book AHA Training</a>
+      <a class="btn secondary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Get a Quote</a>
+    </div>
 
-        <div class="hero-meta">
-          <div>
-            <strong>Principal Consultant</strong>
-            PhD (Leadership) • MBA (Global Operations) • PMP
-          </div>
-          <div>
-            <strong>Credentials</strong>
-            AHA Instructor • CSP • SPHR • CHMM • CSM
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-panel">
-        ✔ On-site & remote delivery<br>
-        ✔ U.S.-based, international reach<br>
-        ✔ Safety, HR & leadership extensions
-      </div>
-    </section>
-
-    <!-- STAFFING -->
-    <section class="section" id="staffing">
-      <h2 data-en="Staffing & Talent Support" data-fr="Recrutement et talents">
-        Staffing & Talent Support
-      </h2>
-      <p class="center"
-        data-en="Professionals aligned to your risk, culture, and operations."
-        data-fr="Des professionnels alignés sur vos risques, votre culture et vos opérations.">
-        Professionals aligned to your risk, culture, and operations.
-      </p>
-
-      <div class="grid3">
-        <div class="panel">
-          <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
-          <h3>Safety & EHS Talent</h3>
-          <p>Construction, manufacturing, facilities, and projects.</p>
-        </div>
-
-        <div class="panel">
-          <div class="icon"><i class="fa-solid fa-id-card-clip"></i></div>
-          <h3>HR & People Operations</h3>
-          <p>Compliance-minded workforce support.</p>
-        </div>
-
-        <div class="panel">
-          <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
-          <h3>Operations & Projects</h3>
-          <p>Structured coordination and execution.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section" id="testimonials">
-      <h2 data-en="Testimonials" data-fr="Témoignages">Testimonials</h2>
-      <p class="center"
-        data-en="What clients and partners say."
-        data-fr="Ce que disent nos clients et partenaires.">
-        What clients and partners say.
-      </p>
-
-      <div class="grid3">
-        <div class="panel quote">
-          <p>"The training felt real and practical."</p>
-          <div class="who">Operations Manager</div>
-        </div>
-        <div class="panel quote">
-          <p>"Safety and HR alignment improved immediately."</p>
-          <div class="who">HR Leader</div>
-        </div>
-        <div class="panel quote">
-          <p>"Professional, responsive, and knowledgeable."</p>
-          <div class="who">Project Executive</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="section" id="why">
-      <h2 data-en="Why Work With Vick Consulting" data-fr="Pourquoi travailler avec Vick Consulting">
-        Why Work With Vick Consulting
-      </h2>
-      <p class="center"
-        data-en="Because safety, people, and leadership must work together."
-        data-fr="Parce que la sécurité, les personnes et le leadership doivent fonctionner ensemble.">
-        Because safety, people, and leadership must work together.
-      </p>
-    </section>
-
+    <p class="hint" style="margin-top: .9rem; max-width: 92%;">
+      Based in the U.S. • Serving nationwide and internationally • Onsite and virtual options.
+    </p>
   </div>
-</main>
 
-<footer>
-  <div class="footer-inner">
-    <div>© <span id="year"></span> Vick Consulting • PhD, MBA, PMP</div>
-    <div>English • Français</div>
+  <!-- No external images: premium built-in visual -->
+  <div class="heroVisual" aria-label="Vick Consulting overview panel">
+    <div class="bgGlow" aria-hidden="true"></div>
+
+    <div class="card">
+      <div class="miniTitle"><i class="fa-solid fa-heart-pulse" style="color:var(--brand)"></i> AHA Training — On Demand</div>
+      <div class="miniText">Request CPR/BLS/First Aid. We schedule sessions based on interest and availability.</div>
+      <div class="badgeRow">
+        <span class="badge"><i class="fa-solid fa-user-check"></i> Instructor‑Led</span>
+        <span class="badge"><i class="fa-solid fa-building"></i> Group Training</span>
+        <span class="badge"><i class="fa-solid fa-video"></i> Virtual/Onsite</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="miniTitle"><i class="fa-solid fa-helmet-safety" style="color:var(--brand)"></i> EHS + HR Compliance</div>
+      <div class="miniText">Turn compliance into culture with practical systems, coaching, and documentation support.</div>
+      <div class="badgeRow">
+        <span class="badge"><i class="fa-solid fa-clipboard-check"></i> OSHA/EPA</span>
+        <span class="badge"><i class="fa-solid fa-fire-extinguisher" ></i> Emergency Preparedness</span>
+        <span class="badge"><i class="fa-solid fa-people-roof"></i> Supervisor Coaching</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:0;">
+      <div class="miniTitle"><i class="fa-solid fa-users" style="color:var(--brand)"></i> Staffing + Workforce</div>
+      <div class="miniText">Safety, HR, operations & project talent — aligned to your environment and risk profile.</div>
+      <div class="badgeRow">
+        <span class="badge"><i class="fa-solid fa-file-arrow-up"></i> Resume Drop</span>
+        <span class="badge"><i class="fa-solid fa-briefcase" ></i> Project Roles</span>
+        <span class="badge"><i class="fa-solid fa-handshake" ></i> Long‑Term Partners</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="statsGrid" aria-label="Highlights">
+    <div class="stat"><strong>On‑Demand AHA</strong><span>CPR • BLS • First Aid — public sessions and private groups</span></div>
+    <div class="stat"><strong>Compliance + Culture</strong><span>Practical safety/HR systems that leaders can sustain</span></div>
+    <div class="stat"><strong>Leadership Development</strong><span>EI + Transformational leadership workshops & coaching</span></div>
+    <div class="stat"><strong>Staffing Solutions</strong><span>Talent pipeline for safety, HR, operations & projects</span></div>
+  </div>
+</section>
+
+<!-- AHA Training -->
+<section class="section" id="aha">
+  <h2>AHA Training (Our #1 Entry Point)</h2>
+  <p class="center">
+    We build readiness from the ground up. Our AHA training is instructor‑led, practical, and designed for real environments — workplaces, community settings, and healthcare teams.
+  </p>
+
+  <div class="grid3">
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <h3>CPR & AED (Workplace + Community)</h3>
+      <p>Confident response skills for staff, volunteers, and community leaders.</p>
+      <ul>
+        <li>Adult, child, and infant CPR fundamentals</li>
+        <li>AED awareness and emergency response flow</li>
+        <li>Ideal for schools, churches, offices, and community programs</li>
+        <li>Custom scenarios aligned to your setting</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-kit-medical"></i></div>
+      <h3>BLS (Healthcare + High‑Risk Teams)</h3>
+      <p>Evidence‑based training for clinical and safety‑critical environments.</p>
+      <ul>
+        <li>Initial certification and renewal options</li>
+        <li>High‑reliability performance under pressure</li>
+        <li>Built for healthcare, EMS, safety leaders, and response teams</li>
+        <li>Instructor‑guided practice and feedback</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-bandage"></i></div>
+      <h3>First Aid (Practical, Site‑Specific)</h3>
+      <p>First aid training tailored to your hazards and response readiness.</p>
+      <ul>
+        <li>Injury and sudden illness response basics</li>
+        <li>Rapid decision making and escalation</li>
+        <li>Great pairing with CPR/AED</li>
+        <li>Supports emergency planning and culture</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Free On-demand -->
+<section class="cta" id="ondemand">
+  <div class="ctaInner">
+    <div>
+      <h3>Free On‑Demand AHA Awareness Class</h3>
+      <p>
+        No fixed dates. Request a free awareness session (CPR/AED/First Aid). We group interest and schedule a live instructor‑led class.
+        Perfect for workplaces, families, volunteers, schools, churches, and community leaders.
+      </p>
+      <p class="fine" style="color: rgba(255,255,255,.88);">Sessions are scheduled once sufficient interest is received.</p>
+    </div>
+    <a href="#contact"><i class="fa-solid fa-bolt"></i> Request Free Session</a>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <h2>Consulting & Advisory Services</h2>
+  <p class="center">
+    Organizations don’t fail because of a lack of policies — they fail because systems, people, and leadership are misaligned.
+    We close that gap with practical, field‑tested solutions.
+  </p>
+
+  <div class="grid3">
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-helmet-safety"></i></div>
+      <h3>EHS & Safety Programs</h3>
+      <p>Reduce risk, strengthen reporting, and build supervisor accountability.</p>
+      <ul>
+        <li>OSHA program development and gap assessments</li>
+        <li>Incident learning, root cause facilitation, and corrective actions</li>
+        <li>Emergency preparedness and response planning</li>
+        <li>Fire safety, drills, evacuation and readiness coaching</li>
+        <li><strong>Outcome:</strong> Clear expectations, safer behaviors, fewer surprises</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+      <h3>HR Compliance & Workforce Risk</h3>
+      <p>Align HR practices with safety outcomes and operational performance.</p>
+      <ul>
+        <li>Supervisor HR training (documentation, coaching, consistency)</li>
+        <li>Policy reviews and practical enforcement guidance</li>
+        <li>Training matrices, onboarding and compliance tracking</li>
+        <li>Culture initiatives that link behavior to accountability</li>
+        <li><strong>Outcome:</strong> Cleaner decisions, stronger leadership confidence</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-people-arrows"></i></div>
+      <h3>Leadership Development</h3>
+      <p>Develop leaders who communicate clearly, coach well, and drive culture.</p>
+      <ul>
+        <li>Emotional intelligence workshops for real workplace scenarios</li>
+        <li>Transformational leadership for trust, ownership, and performance</li>
+        <li>Psychological safety and speaking‑up systems</li>
+        <li>Executive education sessions for senior teams</li>
+        <li><strong>Outcome:</strong> Better decisions, better conversations, better teams</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:1.25rem;">
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h3>Emergency Planning & Drill Design</h3>
+      <p>Build a plan that works when it matters — then train people to use it.</p>
+      <ul>
+        <li>Emergency action plan development and refresh</li>
+        <li>Table‑top exercises and drill facilitation</li>
+        <li>After‑action reviews and improvement roadmaps</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+      <h3>Training Systems & Compliance Readiness</h3>
+      <p>Create training programs that are easy to manage and audit‑ready.</p>
+      <ul>
+        <li>Compliance training plans (OSHA/EPA/Fire/EP)</li>
+        <li>Role‑based training matrices and documentation</li>
+        <li>Manager readiness coaching and follow‑through support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Staffing -->
+<section class="section" id="staffing">
+  <h2>Staffing & Workforce Solutions</h2>
+  <p class="center">
+    When you need the right person fast — and you need them to fit your environment — we help you source and align talent.
+    Safety, HR, compliance, operations, and project roles.
+  </p>
+
+  <div class="grid3">
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+      <h3>Safety & EHS Talent</h3>
+      <p>From field advisors to program leaders — aligned to your risk profile.</p>
+      <ul>
+        <li>Construction, manufacturing, facilities, and projects</li>
+        <li>Compliance‑minded and culture‑driven professionals</li>
+        <li>Short‑term, long‑term, and project‑based options</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-id-card-clip"></i></div>
+      <h3>HR & People Operations</h3>
+      <p>Professionals who can stabilize operations and reduce workforce risk.</p>
+      <ul>
+        <li>HR compliance support and workforce documentation</li>
+        <li>Supervisor enablement and training coordination</li>
+        <li>People systems and policy execution support</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
+      <h3>Operations & Project Support</h3>
+      <p>Project‑ready coordination and execution for complex environments.</p>
+      <ul>
+        <li>Project coordination, scheduling, and continuous improvement</li>
+        <li>Compliance alignment for teams and vendors</li>
+        <li>Structured onboarding and performance expectations</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:1.25rem;">
+    <strong>Resume Drop:</strong> Professionals can submit resumes through the form below. Organizations can request staffing support via the same form.
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="testimonials">
+  <h2>Testimonials</h2>
+  <p class="center">What clients and partners say about working with Vick Consulting.</p>
+
+  <div class="grid3">
+    <div class="panel quote">
+      <p>"The training felt real — not just a checklist. Our team left confident, calm, and ready to respond."</p>
+      <div class="who">Operations Manager <small>Manufacturing • Midwest</small></div>
+    </div>
+
+    <div class="panel quote">
+      <p>"Vick Consulting helped us align safety and HR expectations. Supervisor accountability improved immediately."</p>
+      <div class="who">HR Leader <small>Facilities • Multi‑site</small></div>
+    </div>
+
+    <div class="panel quote">
+      <p>"The leadership session was practical and direct. It changed how our leaders communicate under pressure."</p>
+      <div class="who">Project Executive <small>Construction • Major Projects</small></div>
+    </div>
+  </div>
+
+  <div class="grid3" style="margin-top:1.25rem;">
+    <div class="panel quote">
+      <p>"The on‑demand model made it easy. We requested a session and it was scheduled without friction."</p>
+      <div class="who">Community Organizer <small>Church & Volunteers</small></div>
+    </div>
+
+    <div class="panel quote">
+      <p>"Clear documentation, strong coaching, and a culture-first approach — exactly what we needed."</p>
+      <div class="who">EHS Manager <small>High‑risk Operations</small></div>
+    </div>
+
+    <div class="panel quote">
+      <p>"Professional, responsive, and deeply knowledgeable. They felt like a long-term partner, not a vendor."</p>
+      <div class="who">Director <small>Healthcare & Training</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why work with us -->
+<section class="section" id="why">
+  <h2>Why Work With Vick Consulting</h2>
+  <p class="center">
+    People choose us when they want training that saves lives, leadership that builds trust, and compliance systems that actually hold up.
+    Here’s what makes our approach different.
+  </p>
+
+  <div class="grid2">
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+      <h3>We start with what matters most: life & readiness</h3>
+      <p>
+        AHA training is a powerful entry point because it’s immediately valuable. From there, we expand into culture, systems, and leadership.
+      </p>
+      <ul>
+        <li>Instructor‑led sessions built around real scenarios</li>
+        <li>On-demand scheduling to reduce friction</li>
+        <li>Group training designed for your environment</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-sitemap"></i></div>
+      <h3>We connect training to systems (so it lasts)</h3>
+      <p>
+        Training without follow‑through fades. We help you build simple systems that leaders can sustain — even when things get busy.
+      </p>
+      <ul>
+        <li>Clear expectations, role clarity, and documentation</li>
+        <li>Supervisor coaching and practical accountability tools</li>
+        <li>Audit‑ready training records and compliance alignment</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+      <h3>People-first, performance-driven</h3>
+      <p>
+        We believe culture is built through daily interactions — how leaders coach, correct, and communicate.
+      </p>
+      <ul>
+        <li>Emotional intelligence and transformational leadership</li>
+        <li>Psychological safety without sacrificing standards</li>
+        <li>Human performance thinking for real workplaces</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="icon"><i class="fa-solid fa-handshake-angle"></i></div>
+      <h3>Partner mentality — not “one-and-done”</h3>
+      <p>
+        Whether you need a single training or an ongoing support model, we show up as a partner who owns outcomes.
+      </p>
+      <ul>
+        <li>Fast response and clear project plans</li>
+        <li>Transparent deliverables and simple communication</li>
+        <li>Options for recurring training and advisory support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact / Forms -->
+<section class="section" id="contact">
+  <h2>Contact & Requests</h2>
+  <p class="center">
+    Use this form to request AHA training, join the free on-demand class list, submit your resume, or ask for a quote.
+  </p>
+
+  <div class="formWrap">
+    <div class="panel">
+      <h3 style="margin-bottom:.6rem;">Request Training • RSVP • Resume Drop</h3>
+      <p class="hint" style="margin-bottom:1rem;">This form works without a backend. It opens your email client with all details.</p>
+
+      <form id="vcForm">
+        <div class="field">
+          <label for="intent">I’m here to…</label>
+          <select id="intent" required>
+            <option value="">Select one</option>
+            <option>RSVP for Free On‑Demand AHA Awareness Class</option>
+            <option>Book AHA CPR/AED Training</option>
+            <option>Book AHA BLS Training</option>
+            <option>Book First Aid Training</option>
+            <option>Request EHS / Safety Consulting</option>
+            <option>Request HR Compliance Support</option>
+            <option>Request Leadership Development / Coaching</option>
+            <option>Request Staffing Support</option>
+            <option>Submit Resume (Staffing Pipeline)</option>
+            <option>Invite Vick Consulting for Speaking / Workshop</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="grid2" style="gap:.9rem;">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="(###) ###‑####" />
+          </div>
+          <div class="field">
+            <label for="org">Organization (optional)</label>
+            <input id="org" type="text" placeholder="Company / church / school" />
+          </div>
+        </div>
+
+        <div class="grid2" style="gap:.9rem;">
+          <div class="field">
+            <label for="audience">Audience</label>
+            <select id="audience" required>
+              <option value="">Select one</option>
+              <option>Workplace / Employer</option>
+              <option>Healthcare / Clinical</option>
+              <option>School / Education</option>
+              <option>Church / Faith‑based</option>
+              <option>Community / Public</option>
+              <option>Professional / Candidate</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="size">Group Size (estimate)</label>
+            <select id="size" required>
+              <option value="">Select one</option>
+              <option>1–5</option>
+              <option>6–15</option>
+              <option>16–30</option>
+              <option>31–60</option>
+              <option>60+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notes">Details / Goals</label>
+          <textarea id="notes" placeholder="Tell us what you need, preferred timing, and any context."></textarea>
+          <div class="hint">Tip: For the free on-demand class, say CPR/AED or First Aid and your preferred timeframe.</div>
+        </div>
+
+        <div class="field">
+          <label for="resume">Resume (optional)</label>
+          <input id="resume" type="file" accept=".pdf,.doc,.docx" />
+          <div class="hint">GitHub Pages cannot upload files directly. Attach your resume in the email that opens after you click submit.</div>
+        </div>
+
+        <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Request</button>
+
+        <div class="note">
+          <strong>What happens next:</strong> You’ll get a pre‑filled email. Send it and we’ll respond with scheduling options or a quote.
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-bottom:.6rem;">Direct Contact</h3>
+      <p class="hint">Prefer a quick conversation? Use the contact options below.</p>
+
+      <div style="display:grid;gap:.7rem;margin-top:1rem;">
+        <div class="note"><strong>Email:</strong> <a href="mailto:visiondriver.pro@gmail.com">visiondriver.pro@gmail.com</a></div>
+        <div class="note"><strong>Phone:</strong> <a href="tel:+18323439970">+1 (832) 343‑9970</a></div>
+        <div class="note"><strong>Location:</strong> Indianapolis, IN (Remote‑friendly)</div>
+      </div>
+
+      <div style="margin-top:1.2rem;">
+        <h3 style="margin-bottom:.6rem;">Newsletter (Optional)</h3>
+        <p class="hint">Get leadership insights, training updates, and free class announcements.</p>
+        <form id="newsForm" style="margin-top:.8rem;">
+          <div class="field">
+            <label for="newsEmail">Email</label>
+            <input id="newsEmail" type="email" placeholder="you@example.com" required />
+          </div>
+          <button class="btn secondary" type="submit"><i class="fa-solid fa-envelope"></i> Join Updates</button>
+          <div class="hint" style="margin-top:.4rem;">This opens an email sign-up request (no backend required).</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <p class="center" style="font-weight:800;">
+    Vick Consulting: saving lives is the beginning — building leaders and systems is the legacy.
+  </p>
+</section>
+
+<footer class="footer">
+  <div class="footgrid">
+    <div>
+      <strong style="font-size:1.05rem;">Vick Consulting</strong>
+      <div class="fine">AHA Training • Safety • HR • Leadership • Staffing</div>
+      <div class="fine">&copy; <span id="year"></span> Vick Consulting. All rights reserved.</div>
+      <div class="fine">Disclaimer: This website provides general information and training service requests only. It does not constitute legal advice. Certifications and offerings may vary by location and scheduling.</div>
+    </div>
+    <div>
+      <strong style="font-size:1.05rem;">Quick Links</strong>
+      <div class="fine" style="display:grid;gap:.35rem;margin-top:.6rem;">
+        <a href="#aha">AHA Training</a>
+        <a href="#ondemand">Free On‑Demand Class</a>
+        <a href="#services">Consulting Services</a>
+        <a href="#staffing">Staffing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  function setLang(lang) {
-    document.querySelectorAll("[data-en]").forEach(el => {
-      el.textContent = el.getAttribute(`data-${lang}`);
-    });
+  // GitHub Pages-friendly: create a pre-filled mailto from the form (no backend required)
+  const vcForm = document.getElementById('vcForm');
+  vcForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const intent = document.getElementById('intent').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const org = document.getElementById('org').value;
+    const audience = document.getElementById('audience').value;
+    const size = document.getElementById('size').value;
+    const notes = document.getElementById('notes').value;
 
-    document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add("active");
+    const subject = encodeURIComponent(`Vick Consulting Request: ${intent}`);
+    const body = encodeURIComponent(
+`Hello Vick Consulting,\n\n`+
+`Request Type: ${intent}\n`+
+`Name: ${name}\n`+
+`Email: ${email}\n`+
+`Phone: ${phone || 'N/A'}\n`+
+`Organization: ${org || 'N/A'}\n`+
+`Audience: ${audience}\n`+
+`Group Size: ${size}\n\n`+
+`Details / Goals:\n${notes || '(none provided)'}\n\n`+
+`Resume: If you selected a file, please attach it to this email before sending.\n\n`+
+`Thank you!`
+    );
 
-    document.documentElement.lang = lang;
-  }
+    window.location.href = `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
+  });
+
+  const newsForm = document.getElementById('newsForm');
+  newsForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const ne = document.getElementById('newsEmail').value;
+    const subject = encodeURIComponent('Newsletter Signup: Vick Consulting Updates');
+    const body = encodeURIComponent(`Hello,\n\nPlease add me to Vick Consulting updates.\n\nEmail: ${ne}\n\nThank you!`);
+    window.location.href = `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
+  });
 </script>
 
 </body>
 </html>
-
