@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vick Consulting | AHA Training • Safety • HR • Leadership</title>
+  <meta name="description" content="Vick Consulting delivers American Heart Association (AHA) compliant training and extends into safety, HR, and leadership consulting across the U.S. and internationally." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #157347;
+      --primary-soft: #1f8f57;
+      --accent-yellow: #f5b800;
+      --accent-red: #e5534b;
+      --text: #1a1a1a;
+      --muted: #5f6b7a;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --bg-alt: #f7fafc;
+      --radius: 18px;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-alt);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      height: 70px;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      height: 100%;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text-main {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .brand-text-sub {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    nav a {
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .language-toggle {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .btn {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+      color: #fff;
+      border: none;
+    }
+
+    main {
+      padding-top: 90px;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 2.5rem 1.25rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, var(--primary), var(--accent-yellow));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      color: var(--text);
+    }
+
+    .hero-panel {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      font-size: 0.82rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat {
+      background: #fff;
+      padding: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .stat span {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #fff;
+      padding: 1.6rem 1.25rem;
+      margin-top: 4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo">
+        <!-- LOGO PLACEHOLDER -->
+        <img src="assets/logo.png" alt="Vick Consulting Logo">
+      </div>
+      <div>
+        <div class="brand-text-main">Vick Consulting</div>
+        <div class="brand-text-sub">AHA Training • Safety • HR • Leadership</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#">AHA Courses</a>
+      <a href="#">Employers</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+
+      <div class="language-toggle">
+        <button class="btn" onclick="setLanguage('en')">EN</button>
+        <button class="btn" onclick="setLanguage('fr')">FR</button>
+      </div>
+
+      <button class="btn btn-primary">Book Class</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page">
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">
+          Lead with <span>AHA certification</span>,<br>
+          then build safer organizations.
+        </h1>
+
+        <p class="hero-subtitle">
+          Vick Consulting provides American Heart Association–compliant CPR, BLS, and First Aid training as the gateway to comprehensive safety, HR, and leadership consulting.
+        </p>
+
+        <div class="hero-meta">
+          <div>
+            <strong>Principal Consultant</strong>
+            PhD (Leadership) • MBA (Global Operations) • PMP
+          </div>
+          <div>
+            <strong>Credentials</strong>
+            AHA Instructor • CSP • SPHR • CHMM • CSM
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <strong>Training delivery</strong><br><br>
+        ✔ On-site & group classes<br>
+        ✔ U.S.-based, international delivery<br>
+        ✔ Safety, HR & leadership extensions<br>
+        ✔ Custom programs for employers
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span>10+ Years</span><br>
+        Experience
+      </div>
+      <div class="stat">
+        <span>Multi-Credentialed</span><br>
+        PhD • MBA • PMP
+      </div>
+      <div class="stat">
+        <span>AHA-First Model</span><br>
+        Training → Partnership
+      </div>
+      <div class="stat">
+        <span>US + Global</span><br>
+        Remote & on-site
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      © <span id="year"></span> Vick Consulting • Principal Consultant: PhD, MBA, PMP
+    </div>
+    <div>
+      English • Français (coming next)
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function setLanguage(lang) {
+    alert(
+      lang === "fr"
+        ? "Version française bientôt disponible."
+        : "English version active."
+    );
+  }
+</script>
+
+</body>
+</html>
 
