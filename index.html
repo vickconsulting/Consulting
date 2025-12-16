@@ -515,6 +515,18 @@ header.hide {
       nav { gap: .6rem; }
       .navcta { width: 100%; justify-content: center; }
     }
+    /* MOBILE: hide nav links by default (hamburger menu) */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -530,7 +542,7 @@ header.hide {
   </div>
 </div>
 
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Primary navigation" class="nav-menu">
       <a href="#aha">AHA Training</a>
       <a href="#services">Services</a>
       <a href="#staffing">Staffing</a>
