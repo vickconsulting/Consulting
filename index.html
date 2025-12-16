@@ -1011,7 +1011,11 @@ header.hide {
       <h3 style="margin-bottom:.6rem;">Request Training • RSVP • Resume Drop</h3>
       <p class="hint" style="margin-bottom:1rem;">This form works without a backend. It opens your email client with all details.</p>
 
-      <form id="vcForm">
+      <form
+  action="https://formspree.io/f/xeoybpkr"
+  method="POST"
+  enctype="multipart/form-data"
+>
         <div class="field">
           <label for="intent">I’m here to…</label>
           <select id="intent" required>
@@ -1109,10 +1113,17 @@ header.hide {
       <div style="margin-top:1.2rem;">
         <h3 style="margin-bottom:.6rem;">Newsletter (Optional)</h3>
         <p class="hint">Get leadership insights, training updates, and free class announcements.</p>
-        <form id="newsForm" style="margin-top:.8rem;">
+       <form
+  id="newsForm"
+  action="https://formspree.io/f/xeoybpkr"
+  method="POST"
+  style="margin-top:.8rem;"
+>
+  <input type="hidden" name="intent" value="Newsletter Signup">
+
           <div class="field">
             <label for="newsEmail">Email</label>
-            <input id="newsEmail" type="email" placeholder="you@example.com" required />
+            <input id="newsEmail" name="email" type="email" placeholder="you@example.com" required />
           </div>
           <button class="btn secondary" type="submit"><i class="fa-solid fa-envelope"></i> Join Updates</button>
           <div class="hint" style="margin-top:.4rem;">This opens an email sign-up request (no backend required).</div>
@@ -1203,28 +1214,7 @@ Thank you!`
   // =========================
   // NEWSLETTER FORM
   // =========================
-  const newsForm = document.getElementById('newsForm');
 
-  if (newsForm) {
-    newsForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const email = document.getElementById('newsEmail')?.value || '';
-
-      const subject = encodeURIComponent('Newsletter Signup: Vick Consulting Updates');
-      const body = encodeURIComponent(
-`Hello,
-
-Please add me to Vick Consulting updates.
-
-Email: ${email}
-
-Thank you!`
-      );
-
-      window.location.href =
-        `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
-    });
   }
 
   // =========================
