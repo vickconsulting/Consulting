@@ -27,8 +27,15 @@
       --max: 1200px;
     }
 .logo img {
+  height: 72px;
+  width: auto;
   display: block;
-  max-height: 44px;
+}
+
+@media (max-width: 640px) {
+  .logo img {
+    height: 52px;
+  }
 }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
