@@ -1018,7 +1018,7 @@ header.hide {
 >
         <div class="field">
           <label for="intent">I’m here to…</label>
-          <select id="intent" required>
+          <select id="intent" name="intent" required>
             <option value="">Select one</option>
             <option>RSVP for Free On‑Demand AHA Awareness Class</option>
             <option>Book AHA CPR/AED Training</option>
@@ -1035,29 +1035,28 @@ header.hide {
 
         <div class="field">
           <label for="name">Full Name</label>
-          <input id="name" type="text" placeholder="Your name" required />
+          <input id="name" name="name" type="text" placeholder="Your name" required />
         </div>
 
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="you@example.com" required />
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
         </div>
-
         <div class="grid2" style="gap:.9rem;">
           <div class="field">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" placeholder="(###) ###‑####" />
+           <input id="phone" name="phone" type="tel" placeholder="(###) ###-####" />
           </div>
           <div class="field">
             <label for="org">Organization (optional)</label>
-            <input id="org" type="text" placeholder="Company / church / school" />
+           <input id="org" name="organization" type="text" placeholder="Company / church / school" />
           </div>
         </div>
 
         <div class="grid2" style="gap:.9rem;">
           <div class="field">
             <label for="audience">Audience</label>
-            <select id="audience" required>
+            <select id="audience" name="audience" required>
               <option value="">Select one</option>
               <option>Workplace / Employer</option>
               <option>Healthcare / Clinical</option>
@@ -1069,7 +1068,7 @@ header.hide {
           </div>
           <div class="field">
             <label for="size">Group Size (estimate)</label>
-            <select id="size" required>
+           <select id="size" name="group_size" required>
               <option value="">Select one</option>
               <option>1–5</option>
               <option>6–15</option>
@@ -1082,13 +1081,13 @@ header.hide {
 
         <div class="field">
           <label for="notes">Details / Goals</label>
-          <textarea id="notes" placeholder="Tell us what you need, preferred timing, and any context."></textarea>
+          <textarea id="notes" name="message" placeholder="Tell us what you need..."></textarea>
           <div class="hint">Tip: For the free on-demand class, say CPR/AED or First Aid and your preferred timeframe.</div>
         </div>
 
         <div class="field">
           <label for="resume">Resume (optional)</label>
-          <input id="resume" type="file" accept=".pdf,.doc,.docx" />
+          <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" />
           <div class="hint">GitHub Pages cannot upload files directly. Attach your resume in the email that opens after you click submit.</div>
         </div>
 
