@@ -1151,61 +1151,93 @@ header.hide {
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-let lastScrollY = window.scrollY;
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.scrollY;
-
-  if (currentScroll > lastScrollY && currentScroll > 80) {
-    header.classList.add("hide"); // scrolling down
-  } else {
-    header.classList.remove("hide"); // scrolling up
+  // Footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 
-  lastScrollY = currentScroll;
-});
-
-  // GitHub Pages-friendly: create a pre-filled mailto from the form (no backend required)
+  // =========================
+  // MAIN REQUEST FORM
+  // =========================
   const vcForm = document.getElementById('vcForm');
-  vcForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const intent = document.getElementById('intent').value;
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const org = document.getElementById('org').value;
-    const audience = document.getElementById('audience').value;
-    const size = document.getElementById('size').value;
-    const notes = document.getElementById('notes').value;
 
-    const subject = encodeURIComponent(`Vick Consulting Request: ${intent}`);
-    const body = encodeURIComponent(
-`Hello Vick Consulting,\n\n`+
-`Request Type: ${intent}\n`+
-`Name: ${name}\n`+
-`Email: ${email}\n`+
-`Phone: ${phone || 'N/A'}\n`+
-`Organization: ${org || 'N/A'}\n`+
-`Audience: ${audience}\n`+
-`Group Size: ${size}\n\n`+
-`Details / Goals:\n${notes || '(none provided)'}\n\n`+
-`Resume: If you selected a file, please attach it to this email before sending.\n\n`+
-`Thank you!`
-    );
+  if (vcForm) {
+    vcForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    window.location.href = `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
-  });
+      const intent = document.getElementById('intent')?.value || '';
+      const name = document.getElementById('name')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const phone = document.getElementById('phone')?.value || 'N/A';
+      const org = document.getElementById('org')?.value || 'N/A';
+      const audience = document.getElementById('audience')?.value || '';
+      const size = document.getElementById('size')?.value || '';
+      const notes = document.getElementById('notes')?.value || '(none provided)';
 
+      const subject = encodeURIComponent(`Vick Consulting Request: ${intent}`);
+      const body = encodeURIComponent(
+`Hello Vick Consulting,
+
+Request Type: ${intent}
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Organization: ${org}
+Audience: ${audience}
+Group Size: ${size}
+
+Details / Goals:
+${notes}
+
+Resume: Please attach if applicable.
+
+Thank you!`
+      );
+
+      window.location.href =
+        `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  // =========================
+  // NEWSLETTER FORM
+  // =========================
   const newsForm = document.getElementById('newsForm');
-  newsForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const ne = document.getElementById('newsEmail').value;
-    const subject = encodeURIComponent('Newsletter Signup: Vick Consulting Updates');
-    const body = encodeURIComponent(`Hello,\n\nPlease add me to Vick Consulting updates.\n\nEmail: ${ne}\n\nThank you!`);
-    window.location.href = `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
-  });
+
+  if (newsForm) {
+    newsForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('newsEmail')?.value || '';
+
+      const subject = encodeURIComponent('Newsletter Signup: Vick Consulting Updates');
+      const body = encodeURIComponent(
+`Hello,
+
+Please add me to Vick Consulting updates.
+
+Email: ${email}
+
+Thank you!`
+      );
+
+      window.location.href =
+        `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  // =========================
+  // MOBILE MENU TOGGLE
+  // =========================
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  }
 </script>
 
 </body>
