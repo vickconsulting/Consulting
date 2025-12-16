@@ -45,7 +45,22 @@
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
+       transition: opacity 0.35s ease, transform 0.35s ease;
     }
+    /* Header fades out when scrolling down */
+header.hide {
+  opacity: 0;
+  transform: translateY(-18px);
+  pointer-events: none;
+}
+
+/* Mobile: hide a bit more */
+@media (max-width: 768px) {
+  header.hide {
+    transform: translateY(-24px);
+  }
+}
+
     .navwrap {
       max-width: var(--max);
       margin: 0 auto;
@@ -1125,6 +1140,20 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+let lastScrollY = window.scrollY;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScrollY && currentScroll > 80) {
+    header.classList.add("hide"); // scrolling down
+  } else {
+    header.classList.remove("hide"); // scrolling up
+  }
+
+  lastScrollY = currentScroll;
+});
 
   // GitHub Pages-friendly: create a pre-filled mailto from the form (no backend required)
   const vcForm = document.getElementById('vcForm');
