@@ -1171,44 +1171,7 @@ header.hide {
   // =========================
   // MAIN REQUEST FORM
   // =========================
-  const vcForm = document.getElementById('vcForm');
-
-  if (vcForm) {
-    vcForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const intent = document.getElementById('intent')?.value || '';
-      const name = document.getElementById('name')?.value || '';
-      const email = document.getElementById('email')?.value || '';
-      const phone = document.getElementById('phone')?.value || 'N/A';
-      const org = document.getElementById('org')?.value || 'N/A';
-      const audience = document.getElementById('audience')?.value || '';
-      const size = document.getElementById('size')?.value || '';
-      const notes = document.getElementById('notes')?.value || '(none provided)';
-
-      const subject = encodeURIComponent(`Vick Consulting Request: ${intent}`);
-      const body = encodeURIComponent(
-`Hello Vick Consulting,
-
-Request Type: ${intent}
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Organization: ${org}
-Audience: ${audience}
-Group Size: ${size}
-
-Details / Goals:
-${notes}
-
-Resume: Please attach if applicable.
-
-Thank you!`
-      );
-
-      window.location.href =
-        `mailto:visiondriver.pro@gmail.com?subject=${subject}&body=${body}`;
-    });
+ 
   }
 
   // =========================
