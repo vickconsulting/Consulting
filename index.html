@@ -26,17 +26,6 @@
       --shadow2: 0 10px 26px rgba(2, 6, 23, 0.08);
       --max: 1200px;
     }
-.logo img {
-  height: 72px;
-  width: auto;
-  display: block;
-}
-
-@media (max-width: 640px) {
-  .logo img {
-    height: 52px;
-  }
-}
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -512,15 +501,13 @@
 
 <header>
   <div class="navwrap">
-<div class="logo">
-  <img src="assets/logo.png" alt="Vick Consulting Logo" style="height:44px; width:auto;" />
-
-  <div class="brandtext">
-    <strong>Vick Consulting</strong>
-    <small>AHA Training • Safety • HR • Leadership • Staffing</small>
-  </div>
-</div>
-
+    <div class="logo">
+      <div class="mark" aria-hidden="true"></div>
+      <div class="brandtext">
+        <strong>Vick Consulting</strong>
+        <small>AHA Training • Safety • HR • Leadership • Staffing</small>
+      </div>
+    </div>
 
     <nav aria-label="Primary navigation">
       <a href="#aha">AHA Training</a>
