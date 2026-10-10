@@ -472,7 +472,7 @@ function home(){
 
   ${reviewsBlock()}
 
-  <section class="band"><div class="wrap grid g2" style="margin-top:0;align-items:center"><div><span class="mono eyebrow">${L('Free tool 01','Herramienta gratis 01')}</span><h2 class="h">${L('MEP Safety Check-Up','Chequeo de seguridad MEP')}</h2><p class="sub">${L('Answer a few questions about your crew, your jobs and your paperwork. Get a readiness score for a GC safety review, and the gaps to fix first.','Responda unas preguntas sobre su cuadrilla, sus obras y sus documentos. Reciba un puntaje de preparación para una revisión de seguridad del GC y las brechas que debe corregir primero.')}</p><p style="opacity:.85">${L('Free to try. After 5 uses of our tools, we ask for your email.','Gratis para probar. Después de 5 usos de nuestras herramientas, le pedimos su correo.')}</p></div><div class="cta" style="margin:0"><button class="btn big" data-go="checkup">${L('Start the check-up','Iniciar el chequeo')}</button></div></div></section>
+  <section class="band"><div class="wrap grid g2" style="margin-top:0;align-items:center"><div><span class="mono eyebrow">${L('Free tool 01','Herramienta gratis 01')}</span><h2 class="h">${L('Safety Check-Up','Chequeo de seguridad')}</h2><p class="sub">${L('Answer a few questions about your crew, your jobs and your paperwork. Get a readiness score for a GC safety review, and the gaps to fix first.','Responda unas preguntas sobre su cuadrilla, sus obras y sus documentos. Reciba un puntaje de preparación para una revisión de seguridad del GC y las brechas que debe corregir primero.')}</p><p style="opacity:.85">${L('Free to try. After 5 uses of our tools, we ask for your email.','Gratis para probar. Después de 5 usos de nuestras herramientas, le pedimos su correo.')}</p></div><div class="cta" style="margin:0"><button class="btn big" data-go="checkup">${L('Start the check-up','Iniciar el chequeo')}</button></div></div></section>
 
   <section class="alt"><div class="wrap grid g2" style="margin-top:0;align-items:center"><div class="cta" style="margin:0;justify-content:flex-start"><button class="btn big" data-go="tool">${L('Build a crew brief','Armar una charla de cuadrilla')}</button></div><div><span class="mono eyebrow">${L('Free tool 02','Herramienta gratis 02')}</span><h2 class="h">${L('Crew Brief Builder','Armador de charla de cuadrilla')}</h2><p class="sub">${L('Pick your trade and your tasks. Get the permits list, the job safety analysis (JSA) and the toolbox talk your crew needs today. Download a Word file with the emergency plan and a sign-in sheet.','Elija su oficio y sus tareas. Reciba la lista de permisos, el análisis de seguridad del trabajo (JSA) y la charla de seguridad que su cuadrilla necesita hoy. Descargue un archivo de Word con el plan de emergencia y una hoja de asistencia.')}</p></div></div></section>
 
@@ -974,9 +974,9 @@ function planText(part){
   return o.join('\r\n');
 }
 
-/* ---------- MEP Safety Check-Up ---------- */
+/* ---------- Safety Check-Up ---------- */
 const QS=[
- [P('We have a written safety program that covers our real MEP hazards.','Tenemos un programa de seguridad escrito que cubre nuestros peligros MEP reales.'),P('Write a safety program that covers your real MEP hazards.','Escriba un programa de seguridad que cubra sus peligros MEP reales.')],
+ [P('We have a written safety program that covers our real hazards.','Tenemos un programa de seguridad escrito que cubre nuestros peligros reales.'),P('Write a safety program that covers your real hazards.','Escriba un programa de seguridad que cubra sus peligros reales.')],
  [P('We reviewed that program in the last 12 months.','Revisamos ese programa en los últimos 12 meses.'),P('Review the program once a year and date it.','Revise el programa una vez al año y póngale fecha.')],
  [P('We can show our EMR, TRIR, and DART for the last three years.','Podemos mostrar nuestro EMR, TRIR y DART de los últimos tres años.'),P('Pull your EMR, TRIR, and DART for three years so you can hand them over.','Reúna su EMR, TRIR y DART de tres años para poder entregarlos.')],
  [P('Our injury logs are current (OSHA 300 and 300A, if we must keep them).','Nuestros registros de lesiones están al día (OSHA 300 y 300A, si debemos llevarlos).'),P('Keep injury logs current (OSHA 300 and 300A, if your company must keep them).','Mantenga al día los registros de lesiones (OSHA 300 y 300A, si su empresa debe llevarlos).')],
@@ -1037,7 +1037,7 @@ function cuView(){
   }
   const ok=c.step===0?(+c.p.people>0):c.step===1?Object.keys(c.a).length===QS.length:true;
   const nav=c.step<3?`<div class="cta"><button class="btn line" data-act="cuback" ${c.step?'':'disabled'}>${L('Back','Atrás')}</button><button class="btn" data-act="cunext" ${ok?'':'disabled'}>${c.step===2?L('See my results','Ver mis resultados'):L('Next','Siguiente')}</button></div>`:'';
-  return pageHead(L('Free MEP Safety Check-Up','Chequeo de seguridad MEP gratis'),L('Three short steps. See how ready you are for a GC safety review, what kind of safety help fits your jobs, and how your current safety person measures up.','Tres pasos cortos. Vea qué tan listo está para una revisión de seguridad del GC, qué tipo de apoyo en seguridad le conviene y cómo se compara su persona de seguridad actual.'))+`<section><div class="wrap">${c.step<3?prog:''}${body}${nav}</div></section>`;
+  return pageHead(L('Free Safety Check-Up','Chequeo de seguridad gratis'),L('Three short steps. See how ready you are for a GC safety review, what kind of safety help fits your jobs, and how your current safety person measures up.','Tres pasos cortos. Vea qué tan listo está para una revisión de seguridad del GC, qué tipo de apoyo en seguridad le conviene y cómo se compara su persona de seguridad actual.'))+`<section><div class="wrap">${c.step<3?prog:''}${body}${nav}</div></section>`;
 }
 function cuResult(){
   const c=S.cu,r=cuCalc(),rc=REC[r.rec];
@@ -1062,7 +1062,7 @@ function cuResult(){
 }
 function cuText(){
   const c=S.cu,r=cuCalc(),rc=REC[r.rec],o=[];
-  o.push(L('MEP SAFETY CHECK-UP','CHEQUEO DE SEGURIDAD MEP')+' - Vick Consulting',[c.p.company,fmt(nowIso())].filter(Boolean).join(' | '),'');
+  o.push(L('SAFETY CHECK-UP','CHEQUEO DE SEGURIDAD')+' - Vick Consulting',[c.p.company,fmt(nowIso())].filter(Boolean).join(' | '),'');
   o.push(L('GC READINESS: ','PREPARACIÓN PARA EL GC: ')+r.score+'/100');
   o.push(L('BEST FIT: ','MEJOR OPCIÓN: ')+tl(rc[0])+(r.hrs?' ('+tl(r.hrs)+')':''));
   o.push(L('SAFETY PERSON: ','PERSONA DE SEGURIDAD: ')+(r.fit==='none'?L('none yet','aún no hay'):r.avg.toFixed(1)+'/5'),'');
